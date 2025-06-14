@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vozes da Alma</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Um site com poemas, frases bíblicas e reflexões para inspirar sua alma. Descubra conteúdos que tocam o coração e elevam o espírito.">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow p-4">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-700">Vozes da Alma</h1>
+      <nav class="space-x-4">
+        <a href="#" class="text-gray-600 hover:text-gray-900">Início</a>
+        <a href="#categorias" class="text-gray-600 hover:text-gray-900">Categorias</a>
+        <a href="#autores" class="text-gray-600 hover:text-gray-900">Autores</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="max-w-4xl mx-auto mt-8 px-4">
+    <!-- Destaques -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Destaques</h2>
+      <div class="space-y-4">
+        <blockquote class="border-l-4 border-blue-500 pl-4 italic">
+          "A vida é aquilo que acontece enquanto você está ocupado fazendo outros planos."<br>
+          <span class="block text-sm text-gray-500 mt-1">– John Lennon</span>
+        </blockquote>
+        <blockquote class="border-l-4 border-green-500 pl-4 italic">
+          "Sonhar é acordar-se para dentro."<br>
+          <span class="block text-sm text-gray-500 mt-1">– Mario Quintana</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Categorias -->
+    <section id="categorias" class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Categorias</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <button class="bg-white p-4 rounded shadow hover:bg-blue-100">Amor</button>
+        <button class="bg-white p-4 rounded shadow hover:bg-blue-100">Motivação</button>
+        <button class="bg-white p-4 rounded shadow hover:bg-blue-100">Tristeza</button>
+        <button class="bg-white p-4 rounded shadow hover:bg-blue-100">Reflexão</button>
+        <button class="bg-white p-4 rounded shadow hover:bg-blue-100">Felicidade</button>
+      </div>
+    </section>
+
+    <!-- Autores -->
+    <section id="autores" class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Autores</h2>
+      <ul class="list-disc list-inside">
+        <li><a href="#" class="text-blue-600 hover:underline">Clarice Lispector</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Fernando Pessoa</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Mario Quintana</a></li>
+      </ul>
+    </section>
+
+    <!-- Poema exemplo -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Poema em destaque</h2>
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="text-lg font-bold mb-2">Autopsicografia – Fernando Pessoa</h3>
+        <p class="italic text-gray-700">
+          O poeta é um fingidor.<br />
+          Finge tão completamente<br />
+          Que chega a fingir que é dor<br />
+          A dor que deveras sente.
+        </p>
+      </div>
+    </section>
+
+    <!-- Poemas -->
+    <section id="poemas" class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Poemas</h2>
+      <div id="poemas-container" class="space-y-4"></div>
+    </section>
+
+    <!-- Frases Bíblicas -->
+    <section id="biblicas" class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Frases Bíblicas</h2>
+      <div id="biblicas-container" class="space-y-4"></div>
+    </section>
+
+    <!-- Reflexões -->
+    <section id="reflexoes" class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">Reflexões</h2>
+      <div id="reflexoes-container" class="space-y-4"></div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-white mt-12 p-4 shadow-inner">
+    <div class="max-w-4xl mx-auto text-center text-sm text-gray-500">
+      © 2025 Vozes da Alma — feito por Kalil C. Bandeira
+    </div>
+  </footer>
+
+  <script>
+    // Dados simplificados
+    const poemas = [
+      "No meio do caminho tinha uma pedra - Carlos Drummond de Andrade",
+      "Amar se aprende amando - Carlos Drummond de Andrade",
+      "Tudo vale a pena se a alma não é pequena - Fernando Pessoa"
+    ];
+
+    const frasesBiblicas = [
+      "O Senhor é meu pastor, nada me faltará. - Salmos 23:1",
+      "Tudo posso naquele que me fortalece. - Filipenses 4:13",
+      "Amarás o teu próximo como a ti mesmo. - Mateus 22:39"
+    ];
+
+    const reflexoes = [
+      "A maior de todas as torres começa no solo.",
+      "A sabedoria começa na reflexão.",
+      "Nem tudo o que enfrentamos pode ser mudado, mas nada pode ser mudado até que seja enfrentado."
+    ];
+
+    function renderizarLista(lista, containerId) {
+      const container = document.getElementById(containerId);
+      lista.forEach(item => {
+        const p = document.createElement('p');
+        p.className = 'bg-white p-4 rounded shadow';
+        p.textContent = item;
+        container.appendChild(p);
+      });
+    }
+
+    renderizarLista(poemas, 'poemas-container');
+    renderizarLista(frasesBiblicas, 'biblicas-container');
+    renderizarLista(reflexoes, 'reflexoes-container');
+  </script>
+</body>
+</html>
